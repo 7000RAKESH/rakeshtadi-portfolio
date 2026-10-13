@@ -17,6 +17,6 @@ describe('Verified portfolio facts', () => {
     expect(social.email).toBe('mailto:rakeshmca222@gmail.com');
   });
   it('keeps the specified current role dates', () => {
-    expect(experience[0].dates).toBe('April 2026 — Present');
+    expect(experience[0]?.dates).toBe('April 2026 — Present');
   });
 });
