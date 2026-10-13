@@ -81,20 +81,27 @@ export function Navigation() {
               <Menu />
             </Button>
           </DialogTrigger>
-          <DialogContent className="mobile-navigation" onCloseAutoFocus={(event) => event.preventDefault()}>
+          <DialogContent
+            className="mobile-navigation"
+            onCloseAutoFocus={(event) => event.preventDefault()}
+          >
             <DialogTitle>RAKESH TADI.</DialogTitle>
             <DialogDescription className="sr-only">Portfolio navigation</DialogDescription>
             <nav aria-label="Mobile navigation">
               {navigation.map((name) => (
-                <a key={name} href={`#${name.toLowerCase()}`} onClick={(event) => {
-                  event.preventDefault();
-                  setOpen(false);
-                  const id = name.toLowerCase();
-                  window.setTimeout(() => {
-                    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                    window.history.replaceState(null, '', `#${id}`);
-                  }, 150);
-                }}>
+                <a
+                  key={name}
+                  href={`#${name.toLowerCase()}`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    setOpen(false);
+                    const id = name.toLowerCase();
+                    window.setTimeout(() => {
+                      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+                      window.history.replaceState(null, "", `#${id}`);
+                    }, 150);
+                  }}
+                >
                   {name}
                   <ArrowUpRight />
                 </a>
