@@ -1,29 +1,41 @@
-# Welcome to your Lovable project
+# Rakesh Tadi — Developer Portfolio
 
-This project was built with [Lovable](https://lovable.dev).
+A dark editorial, single-page portfolio built with React, TypeScript, Tailwind CSS v4, TanStack Start, and Motion. Includes accessible section navigation, resume download, project case studies, and reduced-motion support.
 
-## Build with Lovable
+## Local development
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Install Bun, then run:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install
+bun run dev
 ```
 
-## Built with
+## Checks and production output
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+```sh
+bun run test
+bun run lint
+bun run build
+```
+
+The Lovable environment runs its production checks automatically. No credentials or database are required by the portfolio.
+
+## Content and assets
+
+- `src/lib/portfolio.ts`: verified project, experience, skill, and social content.
+- `src/components/portfolio.tsx`: reusable portfolio sections.
+- `src/styles.css`: semantic tokens and responsive layout.
+- `src/assets/resume.asset.json`: actual uploaded PDF, served through Lovable Assets.
+- `src/assets/editorial-sculpture.jpg`: abstract artwork, not an employer screenshot.
+- `src/routes/index.tsx`: page metadata. Canonical and sitemap URLs are deliberately omitted until a real domain is known.
+
+The site uses supplied contact links, not a simulated message-delivery form. Internal employer work has no demo or source-code links. Job Hunter is externally hosted and may be unavailable.
+
+## Deployment
+
+The supported application framework in this workspace is TanStack Start, not Next.js. The current configuration targets Lovable’s edge hosting. Publish from Lovable when ready, then connect your domain in the publishing settings.
+
+For Vercel, export the source through GitHub and first configure a Vercel-compatible TanStack Start server adapter, replacing the current edge-hosting preset. This is a separate deployment configuration step, not included or verified here; do not deploy this repository as a Next.js application. After that adapter is configured, import the repository in Vercel, use the Bun lockfile, and set the build command to `bun run build` with the output defined by the adapter. In Vercel’s domain settings, add the custom domain and apply the DNS records Vercel supplies. Verify the resume asset URL on the new host; if needed, host the supplied PDF on that origin and update the resume pointer.
+
+Add canonical metadata and a domain-based sitemap only after the final production domain is confirmed.
