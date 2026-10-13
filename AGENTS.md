@@ -15,3 +15,4 @@
 - Use Motion for transform/opacity entrances and respect reduced-motion preferences; keep the hero visual a bundled image rather than a fabricated product screenshot.
 - Keep contact actions as verified mailto/external links without a submission form because no message-delivery service is configured.
 - Retain TanStack Start, React, TypeScript, and Tailwind as the supported application stack rather than introducing Next.js.
+- Prebundle React and the portfolio's Radix/Motion hook consumers together using Vite optimizeDeps.include to avoid late optimization mixing React module generations in an open preview; preserve the framework preset's React deduplication.
