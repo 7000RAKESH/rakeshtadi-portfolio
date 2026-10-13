@@ -1,24 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { About, Contact, Experience, Footer, Hero, Navigation, Projects, Skills } from '@/components/portfolio';
 export const Route = createFileRoute("/")({
+  head: () => ({ meta: [
+    { title: 'Rakesh Tadi | Software Engineer & Frontend Developer' },
+    { name: 'description', content: 'Rakesh Tadi is a software engineer in Hyderabad building thoughtful web experiences with React, Next.js, TypeScript, and modern full-stack technologies.' },
+    { property: 'og:title', content: 'Rakesh Tadi | Software Engineer & Frontend Developer' },
+    { property: 'og:description', content: 'Explore Rakesh’s professional contributions, frontend expertise, and full-stack projects.' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ] }),
   component: Index,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <><a href="#main" className="skip-link">Skip to content</a><Navigation /><main id="main"><Hero /><About /><Experience /><Projects /><Skills /><Contact /></main><Footer /></>;
 }
