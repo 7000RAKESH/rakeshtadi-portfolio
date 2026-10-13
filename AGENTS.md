@@ -8,3 +8,11 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Portfolio architecture
+- Keep the portfolio as one explicitly requested scrolling experience on the index route; section anchors provide navigation without redundant pages.
+- Store repeatable portfolio content in a browser-safe data module and use reusable section components so factual content stays centralized.
+- Use Motion for transform/opacity entrances and respect reduced-motion preferences; keep the hero visual a bundled image rather than a fabricated product screenshot.
+- Keep contact actions as verified mailto/external links without a submission form because no message-delivery service is configured.
+- Retain TanStack Start, React, TypeScript, and Tailwind as the supported application stack rather than introducing Next.js.
+- Prebundle React and the portfolio's Radix/Motion hook consumers together using Vite optimizeDeps.include to avoid late optimization mixing React module generations in an open preview; preserve the framework preset's React deduplication.
