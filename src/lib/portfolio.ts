@@ -139,7 +139,7 @@ export const experience = [
   {
     company: "CraftMyPlate",
     role: "Software Development Engineer Intern",
-    dates: "April 2026 — Present",
+    dates: "April 2026 — October 2026",
     current: true,
     description:
       "Contributing to a customer-facing web platform and internal operations applications that connect ordering, kitchen preparation, packing, and dispatch.",
@@ -156,7 +156,7 @@ export const experience = [
   {
     company: "HUEMN (Ve.ai)",
     role: "Frontend Developer Intern",
-    dates: "July 2024 — October 2024",
+    dates: "July 2025 — October 2025",
     current: false,
     description:
       "Built responsive web interfaces and reusable frontend features in a collaborative, Agile product team.",
